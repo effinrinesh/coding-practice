@@ -45,4 +45,16 @@
 #Sum 2
 # ...
 
+import urllib.error, urllib.parse, urllib.request
+from bs4 import BeautifulSoup
+fhandle = urllib.request.urlopen("http://py4e-data.dr-chuck.net/comments_2143396.html")
+#for line in fhandle:
+#    line = line.decode().strip() //BeautifulSoup does decode operation and even strip operation for us so not a big concern
+#    print(line)
+soup = BeautifulSoup(fhandle, "html.parser")
+total = 0
+tags = soup('span') #returns a list of all <span>...</span> tags
+for tag in tags:
+    total = total + int(tag.contents[0])
 
+print(total)
