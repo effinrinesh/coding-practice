@@ -13,4 +13,6 @@ ALTER TABLE employee ADD employee_branch VARCHAR(20);
 
 SELECT * FROM employee;
 
-INSERT INTO employee VALUES (1, "SampleName","SampleDiv","SampleBranch")
+INSERT INTO employee VALUES (2, "Abc","Data Science","London")
+
+INSERT INTO employee (employee_id, employee_division, employee_branch) VALUES (3,"Business Analytics", "Manchester")
